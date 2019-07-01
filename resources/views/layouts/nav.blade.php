@@ -1,95 +1,3 @@
-<!-- sidebar -->
-<nav id="sidebar" aria-label="Main Navigation">
-    <!-- Side Header -->
-    <div class="content-header bg-white-5">
-        <!-- Logo -->
-        <a href="#" title="Ecommerce Escolar" class="font-w700 text-dual font-size-h5 smini-visible">P.E</a>
-        <a title="Ecommerce Escolar" href="{{ url('/') }}" class="font-w700 text-dual font-size-h5 smini-hidden" href="{{ url('/') }}">
-            EC<i class="fa fa-circle-notch text-primary"></i>MMERCE
-            <br>
-            <small class="smini-hide">Productos Escolares</small>
-        </a>
-        <!-- END Logo -->
-        <!-- Options -->
-        <div>
-            <!-- Close Sidebar, Visible only on mobile screens -->
-            <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-            <a class="d-lg-none text-dual ml-3" data-toggle="layout" data-action="sidebar_close" href="javascript:void(0)">
-                <i class="fa fa-times"></i>
-            </a>
-            <!-- END Close Sidebar -->
-        </div>
-        <!-- END Options -->
-    </div>
-    <!-- END Side Header -->
-
-    <!-- Side Navigation -->
-    <div class="content-side content-side-full">
-        <ul class="nav-main">
-            <li class="nav-main-item">
-                <a class="nav-main-link active" href="be_pages_dashboard.html">
-                    <i class="nav-main-link-icon si si-speedometer"></i>
-                    <span class="nav-main-link-name">Panel</span>
-                </a>
-            </li>
-            <li class="nav-main-heading">Opciones</li>
-            <li class="nav-main-item">
-                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                    <i class="nav-main-link-icon si si-energy"></i>
-                    <span class="nav-main-link-name">Productos</span>
-                </a>
-                <ul class="nav-main-submenu">
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_blocks_styles.html">
-                            <span class="nav-main-link-name">Todos los productos</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-main-item">
-                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                    <i class="nav-main-link-icon si si-grid"></i>
-                    <span class="nav-main-link-name">Categorias</span>
-                </a>
-                <ul class="nav-main-submenu">
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_tables_styles.html">
-                            <span class="nav-main-link-name">Todas las Categorias</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-main-item">
-                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                    <i class="nav-main-link-icon si si-grid"></i>
-                    <span class="nav-main-link-name">Ventas</span>
-                </a>
-                <ul class="nav-main-submenu">
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_ui_grid.html">
-                            <span class="nav-main-link-name">Del Dia</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-main-item">
-                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
-                    <i class="nav-main-link-icon si si-grid"></i>
-                    <span class="nav-main-link-name">Reportes</span>
-                </a>
-                <ul class="nav-main-submenu">
-                    <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_ui_grid.html">
-                            <span class="nav-main-link-name">Todos los Reportes</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <!-- END Side Navigation -->
-</nav>
-<!-- END Sidebar -->
 <!-- Header -->
 <header id="page-header">
     <!-- Header Content -->
@@ -116,42 +24,33 @@
             <!-- User Dropdown -->
             <div class="dropdown d-inline-block ml-2">
                 <button type="button" class="btn btn-sm btn-dual" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded" src="assets/media/avatars/avatar10.jpg" alt="Header Avatar" style="width: 18px;">
-                    <span class="d-none d-sm-inline-block ml-1">Adam</span>
+                    <img class="rounded" src="{{ asset('assets/media/avatars/avatar10.jpg') }}" alt="Header Avatar" style="width: 18px;">
+                    <span class="d-none d-sm-inline-block ml-1">{{ Auth::User()->name }}</span>
                     <i class="fa fa-fw fa-angle-down d-none d-sm-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="page-header-user-dropdown">
                     <div class="p-3 text-center bg-primary">
-                        <img class="img-avatar img-avatar48 img-avatar-thumb" src="assets/media/avatars/avatar10.jpg" alt="">
+                        <img class="img-avatar img-avatar48 img-avatar-thumb" src="{{ asset('assets/media/avatars/avatar10.jpg') }}" alt="">
                     </div>
                     <div class="p-2">
-                        <h5 class="dropdown-header text-uppercase">User Options</h5>
-                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_inbox.html">
-                            <span>Inbox</span>
-                            <span>
-                                <span class="badge badge-pill badge-primary">3</span>
-                                <i class="si si-envelope-open ml-1"></i>
-                            </span>
-                        </a>
+                        <h5 class="dropdown-header text-uppercase">Opciones de Usuario</h5>
                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="be_pages_generic_profile.html">
-                            <span>Profile</span>
+                            <span>Perfil</span>
                             <span>
-                                <span class="badge badge-pill badge-success">1</span>
                                 <i class="si si-user ml-1"></i>
                             </span>
                         </a>
                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
-                            <span>Settings</span>
+                            <span>Configuración</span>
                             <i class="si si-settings"></i>
                         </a>
                         <div role="separator" class="dropdown-divider"></div>
-                        <h5 class="dropdown-header text-uppercase">Actions</h5>
-                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="op_auth_lock.html">
-                            <span>Lock Account</span>
-                            <i class="si si-lock ml-1"></i>
-                        </a>
-                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="op_auth_signin.html">
-                            <span>Log Out</span>
+                        <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('logout') }}"
+                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Salir</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                            <span>Salir</span>
                             <i class="si si-logout ml-1"></i>
                         </a>
                     </div>

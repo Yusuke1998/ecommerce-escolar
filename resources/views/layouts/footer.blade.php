@@ -15,6 +15,10 @@
         <script src="{{ asset('assets/js/oneui.core.min.js') }}"></script>
         <script src="{{ asset('assets/js/oneui.app.min.js') }}"></script>
         <script src="{{ asset('assets/js/plugins/chart.js/Chart.bundle.min.js') }}"></script>
+        <script src="{{ asset('assets/js/plugins/axios.min.js') }}"></script>
+        <script src="{{ asset('assets/js/plugins/DataTables/datatables.min.js') }}"></script>
+        <script src="{{ asset('assets/js/pages/be_tables_datatables.min.js') }}"></script>
         <script src="{{ asset('assets/js/pages/be_pages_dashboard.min.js') }}"></script>
+        @yield('my-scripts')
     </body>
 </html>

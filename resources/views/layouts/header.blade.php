@@ -8,6 +8,8 @@
         <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/media/favicons/favicon-192x192.png') }}">
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/media/favicons/apple-touch-icon-180x180.png') }}">
         <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/oneui.min.css') }}">
+        <link rel="stylesheet" id="css-main" href="{{ asset('assets/js/plugins/alertifyjs/alertify.min.css') }}">
+        <link rel="stylesheet" id="css-main" href="{{ asset('assets/js/plugins/DataTables/datatables.min.css') }}">
     </head>
     <body>
         <div id="page-container" class="sidebar-o sidebar-dark enable-page-overlay side-scroll page-header-fixed">
@@ -16,13 +18,13 @@
                 <div class="content-header border-bottom">
                     <!-- User Avatar -->
                     <a class="img-link mr-1" href="javascript:void(0)">
-                        <img class="img-avatar img-avatar32" src="assets/media/avatars/avatar10.jpg" alt="">
+                        <img class="img-avatar img-avatar32" src="{{ asset('assets/media/avatars/avatar10.jpg') }}" alt="">
                     </a>
                     <!-- END User Avatar -->
 
                     <!-- User Info -->
                     <div class="ml-2">
-                        <a class="link-fx text-dark font-w600" href="javascript:void(0)">Adam McCoy</a>
+                        <a class="link-fx text-dark font-w600" href="javascript:void(0)">{{ Auth::User()->email }}</a>
                     </div>
                     <!-- END User Info -->
 
