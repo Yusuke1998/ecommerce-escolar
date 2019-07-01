@@ -73,7 +73,7 @@
 	                </div>
 	                <div class="block-content font-size-sm">
                         <div class="row">
-                            <div class="col-lg-12 col-xl-5">
+                            <div class="col-lg-12 col-xl-12 col-md-12">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
                                     <input type="text" class="form-control form-control-alt" id="name" name="name" placeholder="Nombre">
@@ -114,7 +114,7 @@
 	                </div>
 	                <div class="block-content font-size-sm">
                         <div class="row">
-                            <div class="col-lg-12 col-xl-5">
+                            <div class="col-lg-12 col-xl-12 col-md-12">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
                                     <input type="text" class="form-control form-control-alt" id="nameU" name="name" placeholder="Nombre">

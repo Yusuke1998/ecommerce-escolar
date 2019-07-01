@@ -141,7 +141,7 @@
 	                </div>
 	                <div class="block-content font-size-sm">
                         <div class="row">
-                            <div class="col-lg-12 col-xl-5">
+                            <div class="col-lg-12 col-xl-12 col-md-12">
                             	<div class="form-group">
                                     <label for="codeU">Codigo</label>
                                     <input type="text" class="form-control form-control-alt" id="codeU" name="code" placeholder="Codigo">
