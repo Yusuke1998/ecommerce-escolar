@@ -227,7 +227,15 @@
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-8 col-xl-8">
-                                Todas las imagenes del producto!
+                                <!-- Simple Gallery -->
+                                <h2 class="content-heading text-center">Todas las imagenes del producto!</h2>
+                                <div class="row items-push js-gallery img-fluid-100">
+                                    <div class="col-md-6 col-lg-4 col-xl-3 animated fadeIn">
+                                        <a class="img-link img-link-zoom-in img-thumb img-lightbox" href="{{ asset('assets/media/photos/photo3@2x.jpg') }}">
+                                            <img class="img-fluid" src="{{ asset('assets/media/photos/photo3@2x.jpg') }}" alt="Foto del producto">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="block-content block-content-full text-right border-top">
@@ -266,12 +274,13 @@
     {
         let url = "productos/"+id;
         axios.get(url).then(response=>{
-            $('#idS').val(response.data.id);
-            $('#nameS').val(response.data.name);
-            $('#codeS').val(response.data.code);
-            $('#category_idS').val(response.data.category_id);
-            $('#pricingS').val(response.data.pricing);
-            $('#descriptionS').val(response.data.description);
+            $('#idS').val(response.data[0].id);
+            $('#nameS').val(response.data[0].name);
+            $('#codeS').val(response.data[0].code);
+            $('#category_idS').val(response.data[0].category_id);
+            $('#pricingS').val(response.data[0].pricing);
+            $('#descriptionS').val(response.data[0].description);
+            console.log(response.data[1]);
         });
 
         $('#ver').modal('show');

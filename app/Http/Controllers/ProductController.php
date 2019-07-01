@@ -40,7 +40,17 @@ class ProductController extends Controller
 
     public function show($id)
     {
+        $img = [];
         $producto = Product::where('id',$id)->first();
+        if ($producto->images) {
+            $imagenes = $producto->images;
+            foreach ($imagenes as $key => $value) {
+                array_push($img, $value);
+                
+            }
+        }
+        $producto = [$producto,$img];
+        // dd($producto);
         return $producto;
     }
 

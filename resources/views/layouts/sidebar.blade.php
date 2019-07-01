@@ -15,7 +15,7 @@
     <div class="content-side content-side-full">
         <ul class="nav-main">
             <li class="nav-main-item">
-                <a class="nav-main-link active" href="be_pages_dashboard.html">
+                <a class="nav-main-link active" href="#">
                     <i class="nav-main-link-icon si si-speedometer"></i>
                     <span class="nav-main-link-name">Panel</span>
                 </a>
@@ -50,11 +50,24 @@
             <li class="nav-main-item">
                 <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
                     <i class="nav-main-link-icon si si-grid"></i>
+                    <span class="nav-main-link-name">Ordenes</span>
+                </a>
+                <ul class="nav-main-submenu">
+                    <li class="nav-main-item">
+                        <a class="nav-main-link" href="#">
+                            <span class="nav-main-link-name">Todas las Ordenes</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-main-item">
+                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                    <i class="nav-main-link-icon si si-grid"></i>
                     <span class="nav-main-link-name">Ventas</span>
                 </a>
                 <ul class="nav-main-submenu">
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_ui_grid.html">
+                        <a class="nav-main-link" href="#">
                             <span class="nav-main-link-name">Del Dia</span>
                         </a>
                     </li>
@@ -67,7 +80,7 @@
                 </a>
                 <ul class="nav-main-submenu">
                     <li class="nav-main-item">
-                        <a class="nav-main-link" href="be_ui_grid.html">
+                        <a class="nav-main-link" href="#">
                             <span class="nav-main-link-name">Todos los Reportes</span>
                         </a>
                     </li>

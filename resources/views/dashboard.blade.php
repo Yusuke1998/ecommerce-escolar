@@ -79,7 +79,6 @@
                             </td>
                             <td class="text-center">
                                 <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
                                 </a>
                             </td>
                         </tr>
@@ -97,7 +96,6 @@
                             </td>
                             <td class="text-center">
                                 <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
                                 </a>
                             </td>
                         </tr>
@@ -115,7 +113,6 @@
                             </td>
                             <td class="text-center">
                                 <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Edit">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
                                 </a>
                             </td>
                         </tr>
@@ -165,11 +162,6 @@
                             <td class="d-none d-sm-table-cell text-right">
                                 $999,99
                             </td>
-                            <td class="text-center">
-                                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </a>
-                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -184,11 +176,6 @@
                             <td class="d-none d-sm-table-cell text-right">
                                 $2.299,00
                             </td>
-                            <td class="text-center">
-                                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </a>
-                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -202,11 +189,6 @@
                             </td>
                             <td class="d-none d-sm-table-cell text-right">
                                 $1200,00
-                            </td>
-                            <td class="text-center">
-                                <a href="javascript:void(0)" data-toggle="tooltip" data-placement="left" title="Manage">
-                                    <i class="fa fa-fw fa-pencil-alt"></i>
-                                </a>
                             </td>
                         </tr>
                     </tbody>
