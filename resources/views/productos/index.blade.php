@@ -13,7 +13,7 @@
                     <th class="text-center" style="width: 80px;">N°</th>
                     <th>Codigo</th>
                     <th>Nombre</th>
-                    <th>Producto</th>
+                    <th>Categoria</th>
                     <th>Precio</th>
                     <th style="width: 15%;">Acciones</th>
                 </tr>

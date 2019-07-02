@@ -13,6 +13,13 @@ class CategoryController extends Controller
     	return view('categorias.index',compact('categorias'));
     }
 
+    public function categoria_productos($id)
+    {
+        $categorias = Category::all();
+        $categoria = Category::where('id',$id)->first();
+        return view('inicio.detail_category',compact('categorias','categoria'));
+    }
+
     public function store(Request $request)
     {
     	$data = Request()->validate

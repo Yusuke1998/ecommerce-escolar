@@ -14,8 +14,15 @@ class HomeController extends Controller
 
     public function index()
     {
-    	$productos = Product::all();
-        return view('firstpage',compact('productos'));
+        $productos1 = Product::latest()->take(4)->get();
+        $productos2 = Product::latest()->take(4)->get();
+        $productos3 = Product::latest()->take(4)->get();
+        $productos4 = Product::latest()->take(4)->get();
+        $count = Product::all()->count();
+
+    	$categorias = Product::all();
+        
+        return view('inicio.firstpage',compact('productos1','productos2','productos3','productos4','count','categorias'));
     }
 
     public function dashboard()

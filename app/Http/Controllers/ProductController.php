@@ -11,8 +11,15 @@ class ProductController extends Controller
     public function index()
     {
     	$productos = Product::all();
-    	$categorias = Category::all();
+        $categorias = Category::all();
     	return view('productos.index',compact('productos','categorias'));
+    }
+
+    public function producto_ver($id)
+    {
+    	$categorias = Category::all();
+        $producto = Product::where('id',$id)->first();
+        return view('inicio.detail_product',compact('producto','categorias'));
     }
 
     public function store(Request $request)

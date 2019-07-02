@@ -1,7 +1,12 @@
 <?php
 
+// Sin estar autenticados
 Route::get('/', 'HomeController@index');
 Route::get('/home','HomeController@index')->name('home');
+Route::get('/categoria/productos/{id}','CategoryController@categoria_productos')->name('categoria.productos');
+Route::get('/producto/ver/{id}','ProductController@producto_ver')->name('producto.ver');
+// Sin estar autenticados
+
 
 Auth::routes();
 
