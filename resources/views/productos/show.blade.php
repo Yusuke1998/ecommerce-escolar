@@ -26,6 +26,7 @@
    </div>
    <div class="col-md-8">
    	<!-- Simple Gallery -->
+    @if($producto->images->count() > 0)
     <div class="row items-push js-gallery img-fluid-100">
 		@foreach($producto->images as $imagen)
         <div class="col-md-6 col-lg-4 col-xl-3 animated fadeIn">
@@ -35,6 +36,9 @@
         </div>
 		@endforeach
     </div>
+    @else
+        <p class="h3 text-center mt-3">No hay imagenes relacionadas!</p>
+    @endif
     <!-- END Simple Gallery -->
    </div>
 </div>
