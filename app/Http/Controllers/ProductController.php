@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Image;
 
 class ProductController extends Controller
 {
@@ -39,6 +40,29 @@ class ProductController extends Controller
     	return back()->with('info','Producto creado con exito!');
     }
 
+    public function save_img(Request $request)
+    {
+        $data = Request()->validate
+        ([
+            'imagen'       =>  'required',
+            'product_id'   =>  'required'
+        ]);
+
+        $file = $request->file('imagen');
+        $nameImage = 'producto'.time().'.'.$file->getClientOriginalExtension();
+        $path = public_path().'\img\productos';
+        $file->move($path,$nameImage);
+
+        $producto = Product::find($request->product_id);
+
+        $image = new Image;
+        $image->name = $nameImage;
+        $image->product()->associate($producto);
+        $image->save();
+
+        return back()->with('info','Imagen guardada con exito!');
+    }
+
     public function edit($id)
     {
     	$producto = Product::where('id',$id)->first();
@@ -47,18 +71,8 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $img = [];
         $producto = Product::where('id',$id)->first();
-        if ($producto->images) {
-            $imagenes = $producto->images;
-            foreach ($imagenes as $key => $value) {
-                array_push($img, $value);
-                
-            }
-        }
-        $producto = [$producto,$img];
-        // dd($producto);
-        return $producto;
+        return view('productos.show',compact('producto'));
     }
 
     public function update(Request $request)

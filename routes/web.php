@@ -17,6 +17,7 @@ route::group(['prefix'	=>	'administracion', 'middleware'	=>	'auth'],function(){
 
 	// Productos
 	Route::resource('/productos','ProductController');
+	Route::post('/producto/imagen','ProductController@save_img')->name('productos.imagen');
 	Route::post('/productos/actualizar','ProductController@update')->name('productos.actualizar');
 
 	// Categorias

@@ -45,7 +45,7 @@
 			<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
 				<div class="modal-header" style="margin-top: 15px;">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h3 align="center">Accede para poder hacer tus compras!</h3>
+					<h3 align="center">Accede para hacer tus compras!</h3>
 				</div>
 				<div class="modal-body">
 					<form class="form-horizontal loginFrm" action="{{ route('login') }}" method="POST">

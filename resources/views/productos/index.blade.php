@@ -36,9 +36,9 @@
                     </td>
                     <td class="text-center">
 	                    <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-light" data-toggle="tooltip" title="Detalles de este Producto" onclick="ver({{ $producto->id }})">
+                            <a href="{{ route('productos.show',$producto->id) }}" class="btn btn-sm btn-light" data-toggle="tooltip" title="Detalles de este Producto">
                                 <i class="fa fa-fw fa-eye"></i>
-                            </button>
+                            </a>
 
 	                    	<button type="button" class="btn btn-sm btn-light" data-toggle="tooltip" title="Edita este Producto" onclick="editar({{ $producto->id }})">
 	                            <i class="fa fa-fw fa-pencil-alt"></i>
@@ -180,76 +180,6 @@
     </form>
 </div>
 <!-- END Slide Left Block Modal -->
-
-<!-- Slide Left Block Modal -->
-<div class="modal fade" id="ver" tabindex="-1" role="dialog" aria-labelledby="modal-block-slideleft" aria-hidden="true">
-    <form method="POST" action="{{ route('productos.actualizar') }}" id="form-ver">
-        {{ csrf_field() }}
-        <input type="hidden" name="user_id" value="{{ Auth::User()->id }}">
-        <input type="hidden" name="id" id="idU" value="">
-        <div class="modal-dialog modal-dialog-slideleft modal-xl" role="document">
-            <div class="modal-content">
-                <div class="block block-themed block-transparent mb-0">
-                    <div class="block-header bg-primary-dark">
-                        <h3 class="block-title">Ver Producto</h3>
-                        <div class="block-options">
-                            <button type="button" class="btn-block-option" data-dismiss="modal" aria-label="Close">
-                                <i class="fa fa-fw fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="block-content font-size-sm">
-                        <div class="row">
-                            <div class="col-md-12 col-lg-4 col-xl-4">
-                                <div class="form-group">
-                                    <label for="codeS">Codigo</label>
-                                    <input type="text" disabled class="form-control form-control-alt" id="codeS" name="code" placeholder="Codigo">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nameS">Nombre</label>
-                                    <input type="text" disabled class="form-control form-control-alt" id="nameS" name="name" placeholder="Nombre">
-                                </div>
-                                <div class="form-group">
-                                    <label for="category_idS">Categoria</label>
-                                    <select class="form-control form-control-alt" name="category_id" id="category_idS">
-                                        @foreach($categorias as $categoria)
-                                            <option disabled selected value="{{ $categoria->id }}">{{ $categoria->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pricingS">Precio</label>
-                                    <input type="text" disabled class="form-control form-control-alt" id="pricingS" name="pricing" placeholder="Precio">
-                                </div>
-                                <div class="form-group">
-                                    <label for="descriptionS">Descripción</label>
-                                    <textarea disabled class="form-control form-control-alt" id="descriptionS" name="description" rows="7" placeholder="Describe este producto..."></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-lg-8 col-xl-8">
-                                <!-- Simple Gallery -->
-                                <h2 class="content-heading text-center">Todas las imagenes del producto!</h2>
-                                <div class="row items-push js-gallery img-fluid-100">
-                                    <div class="col-md-6 col-lg-4 col-xl-3 animated fadeIn">
-                                        <a class="img-link img-link-zoom-in img-thumb img-lightbox" href="{{ asset('assets/media/photos/photo3@2x.jpg') }}">
-                                            <img class="img-fluid" src="{{ asset('assets/media/photos/photo3@2x.jpg') }}" alt="Foto del producto">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="block-content block-content-full text-right border-top">
-                            <button type="button" class="btn btn-sm btn-light" data-dismiss="modal">Cerrar</button>
-                            <input type="submit" class="btn btn-sm btn-primary" name="btn-submit" value="Guardar">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
-<!-- END Slide Left Block Modal -->
-
 @stop
 
 @section('my-scripts')
@@ -266,7 +196,6 @@
 			$('#pricingU').val(response.data.pricing);
 			$('#descriptionU').val(response.data.description);
 		});
-
 		$('#editar').modal('show');
 	}
 
@@ -280,9 +209,12 @@
             $('#category_idS').val(response.data[0].category_id);
             $('#pricingS').val(response.data[0].pricing);
             $('#descriptionS').val(response.data[0].description);
-            console.log(response.data[1]);
-        });
+            let imgs = response.data[1];
 
+            imgs.forEach(function(data, i) {
+                $("#imagenes").html("<p>"+data.name+"</p>");
+            });
+        });
         $('#ver').modal('show');
     }
 </script>
