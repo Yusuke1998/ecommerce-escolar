@@ -23,5 +23,8 @@ route::group(['prefix'	=>	'administracion', 'middleware'	=>	'auth'],function(){
 	// Categorias
 	Route::resource('/categorias','CategoryController');
 	Route::post('/categorias/actualizar','CategoryController@update')->name('categorias.actualizar');
+
+	// Carrito
+	Route::post('/carrito/agregar','ShoppingCartController@agregar')->name('carrito');
 });
 

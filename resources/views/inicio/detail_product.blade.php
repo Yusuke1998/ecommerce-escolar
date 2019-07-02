@@ -25,11 +25,14 @@
 		<div class="span8">
 			<h3>{{ $producto->name }}</h3>
 				<hr class="soft"/>
-				<form class="form-horizontal qtyFrm">
+				<form class="form-horizontal qtyFrm" method="POST" action="{{ route('carrito') }}">
 				  <div class="control-group">
 					<label class="control-label"><span>Bs.S {{ $producto->pricing }}</span></label>
 					<div class="controls">
 					@auth
+					  {{ csrf_field() }}
+					  <input type="hidden" name="product_id" value="{{ $producto->id }}">
+					  <input type="hidden" name="user_id" value="{{ Auth::User()->id }}">
 					  <button type="submit" class="btn btn-large btn-primary pull-right">
 					  	Añadir al carrito <i class=" icon-shopping-cart"></i>
 					  </button>

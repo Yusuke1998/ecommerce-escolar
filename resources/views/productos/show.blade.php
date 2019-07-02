@@ -29,7 +29,7 @@
     <div class="row items-push js-gallery img-fluid-100">
 		@foreach($producto->images as $imagen)
         <div class="col-md-6 col-lg-4 col-xl-3 animated fadeIn">
-            <a class="img-link img-link-zoom-in img-thumb img-lightbox" href="{{ asset('img/productos').'/'.$imagen->name }}">
+            <a class="img-link img-link-zoom-in img-thumb img-lightbox" target="_blank" href="{{ asset('img/productos').'/'.$imagen->name }}">
                 <img class="img-fluid" src="{{ asset('img/productos').'/'.$imagen->name }}" alt="">
             </a>
         </div>
