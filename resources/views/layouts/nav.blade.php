@@ -46,12 +46,13 @@
                         </a>
                         <div role="separator" class="dropdown-divider"></div>
                         <a class="dropdown-item d-flex align-items-center justify-content-between" href="{{ route('logout') }}"
-                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Salir</a>
+                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span>Salir</span>
+                            <i class="si si-logout ml-1"></i>
+                        </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
-                            <span>Salir</span>
-                            <i class="si si-logout ml-1"></i>
+                            
                         </a>
                     </div>
                 </div>

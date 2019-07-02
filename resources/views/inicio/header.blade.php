@@ -29,13 +29,18 @@
 			<span class="icon-bar"></span>
 		</a>
 		  <div class="navbar-inner">
-		    <a class="brand" href="index.html"><img src="{{ asset('plantilla-ecommerce/themes/images/logo.png') }}" alt="Bootsshop"/></a>
+		    <a class="brand" href="{{ url('/') }}"><img src="{{ asset('plantilla-ecommerce/themes/images/logo.png') }}" alt="Bootsshop"/></a>
 		    <ul id="topMenu" class="nav pull-right">
-			 <li class=""><a href="contact.html">Contacto</a></li>
 			 <li class="">
 			 @guest
 			 <a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Acceder</span></a>
 			 @endguest
+
+			 @auth
+			 @if(Auth::User()->type == 'administrador')
+			 <a href="{{ route('dashboard') }}" style="padding-right:0"><span class="btn btn-large btn-primary">Administración</span></a>
+			 @endif
+			 @endauth
 
 			<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
 				<div class="modal-header" style="margin-top: 15px;">

@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->enum('type',['administrador','vendedor','comprador'])->default('comprador');
+            $table->enum('type',['administrador','normal'])->default('normal');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('person_id')->unsigned();
